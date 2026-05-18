@@ -21,6 +21,7 @@ class EmployeeSalary:
         self.rest_days = rest_days
 
         self.email = email
+<<<<<<< HEAD
 
    
 
@@ -59,3 +60,24 @@ class EmployeeSalary:
     def salary(self):
 
         return self.hours * self.hourly_payment
+=======
+    
+    @classmethod
+    def get_hours(cls, name, hours=None, rest_days=0, email=None):
+        if hours is None and rest_days > 0:
+            hours = (7 - rest_days) * 8
+        return cls(name, hours, rest_days, email)
+    
+    @classmethod
+    def get_email(cls, name, hours=None, rest_days=0, email=None):
+        if email is None:
+            email = f"{name}@email.com"
+        return cls(name, hours, rest_days, email)
+    
+    @classmethod
+    def set_hourly_payment(cls, new_payment):
+        cls.hourly_payment = new_payment
+    
+    def salary(self):
+        return self.hours * self.hourly_payment
+>>>>>>> 33629e93cd6179b0a5c54c1dcc1893cbe17a5029
