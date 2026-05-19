@@ -7,7 +7,7 @@ class EmployeeSalary:
         self.rest_days = rest_days
         self.email = email
     
-       @classmethod
+    @classmethod
     def get_hours(cls, name, hours=None, rest_days=0, email=None):
         if hours is None and rest_days > 0:
             hours = (7 - rest_days) * 8
